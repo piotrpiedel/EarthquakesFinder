@@ -1,6 +1,4 @@
-package models;
-
-import com.fasterxml.jackson.annotation.JsonGetter;
+package domain;
 
 import java.util.List;
 

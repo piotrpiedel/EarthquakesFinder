@@ -1,0 +1,861 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1580566588000,
+    "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson",
+    "title": "USGS Significant Earthquakes, Past Month",
+    "status": 200,
+    "api": "1.8.1",
+    "count": 21
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.3,
+        "place": "2km NW of Ushiku, Japan",
+        "time": 1580490467040,
+        "updated": 1580565959448,
+        "tz": 540,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us60007lia",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us60007lia.geojson",
+        "felt": 300,
+        "cdi": 6.3,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 621,
+        "net": "us",
+        "code": "60007lia",
+        "ids": ",us60007lia,",
+        "sources": ",us,",
+        "types": ",dyfi,geoserve,moment-tensor,origin,phase-data,",
+        "nst": null,
+        "dmin": 0.258,
+        "rms": 1.25,
+        "gap": 48,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 5.3 - 2km NW of Ushiku, Japan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.1127,
+          35.9798,
+          70.01
+        ]
+      },
+      "id": "us60007lia"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.1,
+        "place": "57km SE of East End, Cayman Islands",
+        "time": 1580248516165,
+        "updated": 1580528275959,
+        "tz": -300,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us60007iig",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us60007iig.geojson",
+        "felt": 71,
+        "cdi": 6,
+        "mmi": 4.905,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 1,
+        "sig": 615,
+        "net": "us",
+        "code": "60007iig",
+        "ids": ",at00q4u7k4,pt20028002,us60007iig,",
+        "sources": ",at,pt,us,",
+        "types": ",dyfi,geoserve,ground-failure,impact-link,losspager,origin,phase-data,shakemap,",
+        "nst": null,
+        "dmin": 3.099,
+        "rms": 0.88,
+        "gap": 77,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.1 - 57km SE of East End, Cayman Islands"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.7142,
+          18.9457,
+          10
+        ]
+      },
+      "id": "us60007iig"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 7.7,
+        "place": "124km NNW of Lucea, Jamaica",
+        "time": 1580238624922,
+        "updated": 1580540582590,
+        "tz": -300,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us60007idc",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us60007idc.geojson",
+        "felt": 1488,
+        "cdi": 8.7,
+        "mmi": 5.967,
+        "alert": "yellow",
+        "status": "reviewed",
+        "tsunami": 1,
+        "sig": 1782,
+        "net": "us",
+        "code": "60007idc",
+        "ids": ",pt20028001,us60007idc,at00q4ttp1,",
+        "sources": ",pt,us,at,",
+        "types": ",dyfi,finite-fault,general-text,geoserve,ground-failure,impact-link,impact-text,losspager,losspager-admin,moment-tensor,origin,phase-data,poster,shakemap,",
+        "nst": null,
+        "dmin": 1.663,
+        "rms": 0.74,
+        "gap": 26,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 7.7 - 124km NNW of Lucea, Jamaica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -78.7627,
+          19.421,
+          14.8
+        ]
+      },
+      "id": "us60007idc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.3,
+        "place": "105km WNW of Kirakira, Solomon Islands",
+        "time": 1580101321061,
+        "updated": 1580205319669,
+        "tz": 660,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us60007gyx",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us60007gyx.geojson",
+        "felt": 22,
+        "cdi": 5.8,
+        "mmi": 5.558,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 623,
+        "net": "us",
+        "code": "60007gyx",
+        "ids": ",us60007gyx,",
+        "sources": ",us,",
+        "types": ",dyfi,geoserve,ground-failure,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": null,
+        "dmin": 8.03,
+        "rms": 1.12,
+        "gap": 18,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.3 - 105km WNW of Kirakira, Solomon Islands"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.024,
+          -10.1059,
+          17.68
+        ]
+      },
+      "id": "us60007gyx"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5,
+        "place": "16km S of Indios, Puerto Rico",
+        "time": 1579983638640,
+        "updated": 1580322773033,
+        "tz": -240,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/pr2020025008",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/pr2020025008.geojson",
+        "felt": 809,
+        "cdi": 5.8,
+        "mmi": 5.279,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 854,
+        "net": "pr",
+        "code": "2020025008",
+        "ids": ",pt20025053,us60007fx0,pr2020025008,",
+        "sources": ",pt,us,pr,",
+        "types": ",dyfi,geoserve,losspager,origin,phase-data,shakemap,",
+        "nst": 16,
+        "dmin": 0.07,
+        "rms": 0.17,
+        "gap": 158,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 5.0 - 16km S of Indios, Puerto Rico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.8188,
+          18.0105,
+          13
+        ]
+      },
+      "id": "pr2020025008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.62,
+        "place": "23km NNE of Barstow, CA",
+        "time": 1579921414920,
+        "updated": 1580513333463,
+        "tz": -480,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci39281440",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci39281440.geojson",
+        "felt": 3600,
+        "cdi": 4.2,
+        "mmi": 6.91,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 1,
+        "sig": 748,
+        "net": "ci",
+        "code": "39281440",
+        "ids": ",ci39281440,at00q4n75y,us60007fd8,",
+        "sources": ",ci,at,us,",
+        "types": ",dyfi,focal-mechanism,geoserve,impact-link,losspager,moment-tensor,nearby-cities,origin,phase-data,scitech-link,shake-alert,shakemap,",
+        "nst": 46,
+        "dmin": 0.2228,
+        "rms": 0.14,
+        "gap": 33,
+        "magType": "mw",
+        "type": "earthquake",
+        "title": "M 4.6 - 23km NNE of Barstow, CA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.9696667,
+          35.0975,
+          3.07
+        ]
+      },
+      "id": "ci39281440"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.7,
+        "place": "9km NNE of Doganyol, Turkey",
+        "time": 1579888514213,
+        "updated": 1580413908935,
+        "tz": 120,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us60007ewc",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us60007ewc.geojson",
+        "felt": 295,
+        "cdi": 7.9,
+        "mmi": 9.28,
+        "alert": "orange",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 1233,
+        "net": "us",
+        "code": "60007ewc",
+        "ids": ",us60007ewc,",
+        "sources": ",us,",
+        "types": ",dyfi,finite-fault,general-text,geoserve,ground-failure,impact-text,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": null,
+        "dmin": 0.912,
+        "rms": 0.72,
+        "gap": 48,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.7 - 9km NNE of Doganyol, Turkey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.0814,
+          38.3898,
+          11.91
+        ]
+      },
+      "id": "us60007ewc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.6,
+        "place": "15km ESE of Kirkagac, Turkey",
+        "time": 1579720936276,
+        "updated": 1580416182033,
+        "tz": 120,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us60007d2r",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us60007d2r.geojson",
+        "felt": 178,
+        "cdi": 6.1,
+        "mmi": 7.258,
+        "alert": "yellow",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 759,
+        "net": "us",
+        "code": "60007d2r",
+        "ids": ",us60007d2r,",
+        "sources": ",us,",
+        "types": ",dyfi,geoserve,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": null,
+        "dmin": 0.564,
+        "rms": 0.53,
+        "gap": 18,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 5.6 - 15km ESE of Kirkagac, Turkey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.8444,
+          39.0757,
+          5.36
+        ]
+      },
+      "id": "us60007d2r"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 3.6,
+        "place": "4km NNE of Granada Hills, CA",
+        "time": 1579678870790,
+        "updated": 1580541722221,
+        "tz": -480,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/ci39277736",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci39277736.geojson",
+        "felt": 9419,
+        "cdi": 4.5,
+        "mmi": 4.38,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 649,
+        "net": "ci",
+        "code": "39277736",
+        "ids": ",ci39277736,us60007cnw,",
+        "sources": ",ci,us,",
+        "types": ",dyfi,focal-mechanism,geoserve,nearby-cities,origin,phase-data,scitech-link,shakemap,",
+        "nst": 193,
+        "dmin": 0.0192,
+        "rms": 0.25,
+        "gap": 20,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 3.6 - 4km NNE of Granada Hills, CA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.4855,
+          34.3005,
+          7.72
+        ]
+      },
+      "id": "ci39277736"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 3.8,
+        "place": "4km ENE of Fincastle, Tennessee",
+        "time": 1579547531260,
+        "updated": 1580530193066,
+        "tz": -300,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/se60300191",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/se60300191.geojson",
+        "felt": 10800,
+        "cdi": 4.9,
+        "mmi": 4.509,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 712,
+        "net": "se",
+        "code": "60300191",
+        "ids": ",se60300191,us60007bif,",
+        "sources": ",se,us,",
+        "types": ",dyfi,general-text,geoserve,moment-tensor,origin,phase-data,shakemap,",
+        "nst": 36,
+        "dmin": 0.1218,
+        "rms": 0.18,
+        "gap": 32,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 3.8 - 4km ENE of Fincastle, Tennessee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.0268333,
+          36.4305,
+          34.84
+        ]
+      },
+      "id": "se60300191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.5,
+        "place": "3km WSW of South Hutchinson, Kansas",
+        "time": 1579460921185,
+        "updated": 1580280790463,
+        "tz": -360,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us60007att",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us60007att.geojson",
+        "felt": 3294,
+        "cdi": 5.8,
+        "mmi": 6.323,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 892,
+        "net": "us",
+        "code": "60007att",
+        "ids": ",us60007att,",
+        "sources": ",us,",
+        "types": ",dyfi,geoserve,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": null,
+        "dmin": 0.028,
+        "rms": 0.48,
+        "gap": 89,
+        "magType": "mwr",
+        "type": "earthquake",
+        "title": "M 4.5 - 3km WSW of South Hutchinson, Kansas"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9712,
+          38.0144,
+          5
+        ]
+      },
+      "id": "us60007att"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6,
+        "place": "86km ENE of Arzak, China",
+        "time": 1579440476751,
+        "updated": 1579550772153,
+        "tz": 480,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us60007anp",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us60007anp.geojson",
+        "felt": 9,
+        "cdi": 4.1,
+        "mmi": 7.536,
+        "alert": "orange",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 1004,
+        "net": "us",
+        "code": "60007anp",
+        "ids": ",us60007anp,",
+        "sources": ",us,",
+        "types": ",dyfi,general-text,geoserve,ground-failure,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": null,
+        "dmin": 1.969,
+        "rms": 0.51,
+        "gap": 28,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.0 - 86km ENE of Arzak, China"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.1064,
+          39.8309,
+          6.28
+        ]
+      },
+      "id": "us60007anp"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.2,
+        "place": "6km WSW of Guanica, Puerto Rico",
+        "time": 1579102583850,
+        "updated": 1580357514040,
+        "tz": -240,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/pr2020015008",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/pr2020015008.geojson",
+        "felt": 459,
+        "cdi": 5.6,
+        "mmi": 5.454,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 673,
+        "net": "pr",
+        "code": "2020015008",
+        "ids": ",pt20015003,us700070a1,pr2020015008,",
+        "sources": ",pt,us,pr,",
+        "types": ",dyfi,geoserve,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": 13,
+        "dmin": 0.0604,
+        "rms": 0.18,
+        "gap": 245,
+        "magType": "mwp",
+        "type": "earthquake",
+        "title": "M 5.2 - 6km WSW of Guanica, Puerto Rico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -67.0171,
+          17.9155,
+          5
+        ]
+      },
+      "id": "pr2020015008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.9,
+        "place": "13km SE of Guanica, Puerto Rico",
+        "time": 1578747285910,
+        "updated": 1580108012802,
+        "tz": -240,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/pr2020011010",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/pr2020011010.geojson",
+        "felt": 1330,
+        "cdi": 6.4,
+        "mmi": 6.598,
+        "alert": "yellow",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 1290,
+        "net": "pr",
+        "code": "2020011010",
+        "ids": ",pt20011058,us70006ydb,pr2020011010,",
+        "sources": ",pt,us,pr,",
+        "types": ",dyfi,general-text,geoserve,ground-failure,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": 12,
+        "dmin": 0.1945,
+        "rms": 0.31,
+        "gap": 199,
+        "magType": "mwp",
+        "type": "earthquake",
+        "title": "M 5.9 - 13km SE of Guanica, Puerto Rico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.8508,
+          17.949,
+          5
+        ]
+      },
+      "id": "pr2020011010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.2,
+        "place": "4km SSW of Indios, Puerto Rico",
+        "time": 1578695185000,
+        "updated": 1580058538688,
+        "tz": -240,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/pr2020010060",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/pr2020010060.geojson",
+        "felt": 726,
+        "cdi": 5.8,
+        "mmi": 5.88,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 837,
+        "net": "pr",
+        "code": "2020010060",
+        "ids": ",pt20010006,us70006xy5,pr2020010060,",
+        "sources": ",pt,us,pr,",
+        "types": ",dyfi,geoserve,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": 15,
+        "dmin": 0.0403,
+        "rms": 0.15,
+        "gap": 216,
+        "magType": "ml",
+        "type": "earthquake",
+        "title": "M 5.2 - 4km SSW of Indios, Puerto Rico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.883,
+          17.935,
+          9
+        ]
+      },
+      "id": "pr2020010060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.4,
+        "place": "Chukotskiy Avtonomnyy Okrug, Russia",
+        "time": 1578559088278,
+        "updated": 1580285579199,
+        "tz": 720,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us70006wuf",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us70006wuf.geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": 7.443,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 630,
+        "net": "us",
+        "code": "70006wuf",
+        "ids": ",us70006wuf,",
+        "sources": ",us,",
+        "types": ",geoserve,ground-failure,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": null,
+        "dmin": 6.048,
+        "rms": 0.77,
+        "gap": 21,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.4 - Chukotskiy Avtonomnyy Okrug, Russia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          171.0611,
+          62.358,
+          10
+        ]
+      },
+      "id": "us70006wuf"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.6,
+        "place": "9km SSW of Tallaboa, Puerto Rico",
+        "time": 1578395923540,
+        "updated": 1580298367604,
+        "tz": -240,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/pr2020007010",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/pr2020007010.geojson",
+        "felt": 192,
+        "cdi": 7.2,
+        "mmi": 6.837,
+        "alert": "yellow",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 788,
+        "net": "pr",
+        "code": "2020007010",
+        "ids": ",us70006vpb,pr2020007010,",
+        "sources": ",us,pr,",
+        "types": ",dyfi,geoserve,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": 10,
+        "dmin": 0.171,
+        "rms": 0.08,
+        "gap": 177,
+        "magType": "mwp",
+        "type": "earthquake",
+        "title": "M 5.6 - 9km SSW of Tallaboa, Puerto Rico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.776,
+          18.0223,
+          9
+        ]
+      },
+      "id": "pr2020007010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.4,
+        "place": "8km S of Indios, Puerto Rico",
+        "time": 1578385466567,
+        "updated": 1580342401548,
+        "tz": -240,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us70006vll",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us70006vll.geojson",
+        "felt": 2478,
+        "cdi": 7.7,
+        "mmi": 7.658,
+        "alert": "orange",
+        "status": "reviewed",
+        "tsunami": 1,
+        "sig": 1770,
+        "net": "us",
+        "code": "70006vll",
+        "ids": ",us70006vll,pt20007001,at00q3qa0q,pt20007009,pr2020007007,",
+        "sources": ",us,pt,at,pt,pr,",
+        "types": ",associate,dyfi,general-link,general-text,geoserve,ground-failure,impact-link,losspager,moment-tensor,oaf,origin,phase-data,poster,shakemap,trump-origin,",
+        "nst": null,
+        "dmin": 0.233,
+        "rms": 0.87,
+        "gap": 70,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.4 - 8km S of Indios, Puerto Rico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.8125,
+          17.9161,
+          10
+        ]
+      },
+      "id": "us70006vll"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.2,
+        "place": "16km SSW of Sinabang, Indonesia",
+        "time": 1578377120269,
+        "updated": 1578641267084,
+        "tz": 420,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us70006vkq",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us70006vkq.geojson",
+        "felt": 13,
+        "cdi": 6.5,
+        "mmi": 6.125,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 1,
+        "sig": 600,
+        "net": "us",
+        "code": "70006vkq",
+        "ids": ",us70006vkq,",
+        "sources": ",us,",
+        "types": ",dyfi,geoserve,ground-failure,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": null,
+        "dmin": 1.598,
+        "rms": 1.07,
+        "gap": 55,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.2 - 16km SSW of Sinabang, Indonesia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          96.347,
+          2.3334,
+          20.34
+        ]
+      },
+      "id": "us70006vkq"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.8,
+        "place": "13km SSE of Indios, Puerto Rico",
+        "time": 1578306738770,
+        "updated": 1579127868058,
+        "tz": -240,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/pr2020006006",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/pr2020006006.geojson",
+        "felt": 934,
+        "cdi": 6.3,
+        "mmi": 6.356,
+        "alert": "yellow",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 1238,
+        "net": "pr",
+        "code": "2020006006",
+        "ids": ",pt20006001,us70006v7k,pr2020006006,",
+        "sources": ",pt,us,pr,",
+        "types": ",dyfi,general-text,geoserve,ground-failure,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": 19,
+        "dmin": 0.1231,
+        "rms": 0.29,
+        "gap": 227,
+        "magType": "mwp",
+        "type": "earthquake",
+        "title": "M 5.8 - 13km SSE of Indios, Puerto Rico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -66.8193,
+          17.8675,
+          6
+        ]
+      },
+      "id": "pr2020006006"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.9,
+        "place": "3km SSW of Santo Domingo Zanatepec, Mexico",
+        "time": 1578199249807,
+        "updated": 1580451269209,
+        "tz": -360,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us70006uwq",
+        "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us70006uwq.geojson",
+        "felt": 137,
+        "cdi": 5.9,
+        "mmi": 4.655,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 616,
+        "net": "us",
+        "code": "70006uwq",
+        "ids": ",us70006uwq,",
+        "sources": ",us,",
+        "types": ",dyfi,geoserve,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": null,
+        "dmin": 0.811,
+        "rms": 1.29,
+        "gap": 35,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 5.9 - 3km SSW of Santo Domingo Zanatepec, Mexico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.3597,
+          16.4501,
+          87
+        ]
+      },
+      "id": "us70006uwq"
+    }
+  ],
+  "bbox": [
+    -118.4855,
+    -10.1059,
+    3.07,
+    171.0611,
+    62.358,
+    87
+  ]
+}

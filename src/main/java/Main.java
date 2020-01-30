@@ -1,15 +1,19 @@
-import client.MonthSignificantEarthquakes;
-import distancecalc.DistanceCalculatorHaversine;
-import models.Coordinates;
-import models.Earthquake;
-import org.geojson.Feature;
-import org.geojson.Point;
+import client.EarthquakesApiClient;
+import client.MonthAllEarthquakes;
+import domain.Coordinates;
+import domain.EarthquakePlaceToCoordinates;
+import service.EarthquakesService;
+import util.EarthquakesUtil;
 import util.MapUtil;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+import java.util.Scanner;
+
+import static util.CoordinatesParser.parseLatitude;
+import static util.CoordinatesParser.parseLongitude;
+import static util.EarthquakesUtil.filterEarthquakesWithCoordinatesDuplicates;
+import static util.EarthquakesUtil.mapFeaturesToEarthquakePlaceToCoordinatesList;
 
 
 //Latitude : max/min +90 to -90
@@ -17,32 +21,31 @@ import java.util.stream.Collectors;
 //Longitude : max/min +180 to -180
 
 public class Main {
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        MonthSignificantEarthquakes monthAllEarthquakes = new MonthSignificantEarthquakes();
-        List<Feature> featureList = monthAllEarthquakes.getEarthquakes().getFeatures();
-        DistanceCalculatorHaversine distanceCalculatorHaversine = new DistanceCalculatorHaversine();
+        run();
+    }
 
-        Coordinates coordinates = new Coordinates(80, 123.566);
+    private static void run() {
+        EarthquakesService earthquakesService = new EarthquakesService();
 
-        Map<Earthquake, Double> result2 = featureList
-                .stream()
-                .map(it -> new Earthquake(it.getProperty("place"), (Point) it.getGeometry()))
-                .collect(Collectors.toMap(Function.identity(), it -> distanceCalculatorHaversine.calculateDistance(it.getCoordinates(), coordinates)));
-        Map<Earthquake, Double> result3 = MapUtil.sortByValue(result2);
+        while (true) {
+            System.out.println("Please enter latitude and longitude to get nearest earthquakes (press enter after each value)");
+            System.out.println("Note: latitude should be in [-90.0, 90.0], longitude should be in [-180.0,180.0]");
+            String line = scanner.nextLine();
+            try {
+                double latitude = parseLatitude(line);
+                double longitude = parseLongitude(scanner.nextLine());
+                System.out.println("Searching for nearest to point (" + latitude + ", " + longitude + ") earthquakes...");
 
-
-//        Map<Earthquake, Double> result2 = featureList
-//                .stream()
-//                .map(it -> new Earthquake(it.getProperty("place"), (Point) it.getGeometry()))
-//                .collect(Collectors.toMap(Function.identity(), it -> distanceCalculatorHaversine.calculateDistance(it.getCoordinates(), coordinates)))
-//                .entrySet()
-//                .stream()
-////                .filter(earthquakeDoubleEntry -> e)
-//                .sorted(Map.Entry.comparingByValue())
-//                .limit(10)
-//                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldDistance, newDistance) -> oldDistance, LinkedHashMap::new));
-        result3.forEach((it, it2) -> System.out.println(it.toString() + " " + it2.toString()));
-
+                System.out.println(earthquakesService.getPrintableNearbyEarthquakes(new Coordinates(latitude, longitude)));
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            } catch (Exception e) {
+                System.out.println("Something went wrong, please try again...");
+            }
+        }
     }
 }
 
