@@ -6,7 +6,7 @@ import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.toRadians;
 
-public class DistanceCalculatorHaversine extends DistanceCalculator {
+public class DistanceCalculatorHaversine implements DistanceCalculator {
 
     @Override
     public double calculateDistance(double latitude1, double longitude1, double latitude2, double longitude2) {

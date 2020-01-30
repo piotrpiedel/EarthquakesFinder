@@ -1,4 +1,4 @@
-package models;
+package domain;
 
 public class Properties {
     private String title;

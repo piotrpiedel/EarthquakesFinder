@@ -1,17 +1,21 @@
-package models;
+package domain;
 
 import org.geojson.Point;
 
-public class Earthquake {
+public class EarthquakePlaceToCoordinates {
     private String place;
     private Coordinates coordinates;
 
-    public Earthquake(String place, Point point) {
+    public EarthquakePlaceToCoordinates() {
+
+    }
+
+    public EarthquakePlaceToCoordinates(String place, Point point) {
         this.place = place;
         this.coordinates = new Coordinates(point.getCoordinates().getLatitude(), point.getCoordinates().getLongitude());
     }
 
-    public Earthquake(String place, Coordinates coordinates) {
+    public EarthquakePlaceToCoordinates(String place, Coordinates coordinates) {
         this.place = place;
         this.coordinates = coordinates;
     }
@@ -31,7 +35,6 @@ public class Earthquake {
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
-
 
 
     @Override
