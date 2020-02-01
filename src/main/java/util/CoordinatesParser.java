@@ -4,6 +4,10 @@ import domain.GeographicCoordinates;
 
 public class CoordinatesParser {
 
+    private CoordinatesParser() {
+        throw new IllegalStateException("Utility class");
+    }
+
     private static final double LOWEST_LATITUDE = -90.0;
     private static final double HIGHEST_LATITUDE = 90.0;
     private static final double LOWEST_LONGITUDE = -180.0;
@@ -29,7 +33,7 @@ public class CoordinatesParser {
         }
 
         if (line == null || line.length() == 0 || line.chars().allMatch(Character::isWhitespace)) {
-            throw new IllegalArgumentException(" Value can not be null, empty or blank!");
+            throw new IllegalArgumentException("Values can't be blank!");
         } else {
             try {
                 double coordinate = Double.parseDouble(line);
