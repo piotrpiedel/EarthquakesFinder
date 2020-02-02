@@ -1,10 +1,11 @@
+import client.MonthAllEarthquakes;
+import distancecalc.DistanceCalculatorHaversine;
 import domain.Coordinates;
+import domain.Latitude;
+import domain.Longitude;
 import service.EarthquakesService;
 
 import java.util.Scanner;
-
-import static util.CoordinatesParser.parseLatitude;
-import static util.CoordinatesParser.parseLongitude;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
@@ -14,7 +15,7 @@ public class Main {
     }
 
     private static void run() {
-        EarthquakesService earthquakesService = new EarthquakesService();
+        EarthquakesService earthquakesService = new EarthquakesService(new DistanceCalculatorHaversine(), new MonthAllEarthquakes());
 
         while (true) {
             System.out.println("\n");
@@ -24,10 +25,15 @@ public class Main {
             System.out.println("Enter longitude from range [-180.0,180.0]");
             String longitudeInput = scanner.nextLine();
             try {
-                double latitude = parseLatitude(latitudeInput);
-                double longitude = parseLongitude(longitudeInput);
+                Latitude latitude = new Latitude(latitudeInput);
+                Longitude longitude = new Longitude(longitudeInput);
                 System.out.println("Ten nearest earthquakes from last month to given coordinates");
-                System.out.println(earthquakesService.getPrintableNearbyEarthquakes(new Coordinates(latitude, longitude)));
+
+                System.out.println(earthquakesService.getPrintableNearbyEarthquakes(
+                        earthquakesService
+                                .getNearestEarthquakesSortedByDistanceDistinct(
+                                        new Coordinates(latitude, longitude), 10)));
+
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             } catch (Exception e) {

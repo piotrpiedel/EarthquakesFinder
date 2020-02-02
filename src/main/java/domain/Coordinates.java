@@ -5,34 +5,29 @@ import org.geojson.Point;
 import java.util.Objects;
 
 public class Coordinates {
-    private double latitude;
-    private double longitude;
+    Latitude latitude;
+    Longitude longitude;
 
-    public Coordinates(double latitude, double longitude) {
+    public Coordinates(Latitude latitude, Longitude longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
     public Coordinates(Point point) {
-        this.latitude = point.getCoordinates().getLatitude();
-        this.longitude = point.getCoordinates().getLatitude();
+        mapPointToCoordinates(point);
     }
 
-
-    public Double getLatitude() {
-        return latitude;
+    private void mapPointToCoordinates(Point point) {
+        this.latitude = new Latitude(point.getCoordinates().getLatitude());
+        this.longitude = new Longitude(point.getCoordinates().getLatitude());
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
+    public Longitude getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+    public Latitude getLatitude() {
+        return latitude;
     }
 
     @Override
@@ -40,15 +35,14 @@ public class Coordinates {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Coordinates that = (Coordinates) o;
-        return Double.compare(that.latitude, latitude) == 0 &&
-                Double.compare(that.longitude, longitude) == 0;
+        return Objects.equals(latitude, that.latitude) &&
+                Objects.equals(longitude, that.longitude);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(latitude, longitude);
     }
-
 
     @Override
     public String toString() {
