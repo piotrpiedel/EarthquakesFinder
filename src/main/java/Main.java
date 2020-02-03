@@ -15,6 +15,7 @@ public class Main {
     }
 
     private static void run() {
+        final int earthQuakesToDisplay = 10;
         EarthquakesService earthquakesService = new EarthquakesService(new DistanceCalculatorHaversine(), new MonthAllEarthquakes());
 
         while (true) {
@@ -32,12 +33,10 @@ public class Main {
                 System.out.println(earthquakesService.getPrintableNearbyEarthquakes(
                         earthquakesService
                                 .getNearestEarthquakesSortedByDistanceDistinct(
-                                        new Coordinates(latitude, longitude), 10)));
+                                        new Coordinates(latitude, longitude), earthQuakesToDisplay)));
 
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println("Something went wrong, please try again...");
             }
         }
     }

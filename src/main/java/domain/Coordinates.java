@@ -5,8 +5,8 @@ import org.geojson.Point;
 import java.util.Objects;
 
 public class Coordinates {
-    Latitude latitude;
-    Longitude longitude;
+    private Latitude latitude;
+    private Longitude longitude;
 
     public Coordinates(Latitude latitude, Longitude longitude) {
         this.latitude = latitude;

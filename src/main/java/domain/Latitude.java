@@ -22,4 +22,6 @@ public class Latitude extends GeographicCoordinate {
         return HIGHEST_LATITUDE;
     }
 
+
+
 }

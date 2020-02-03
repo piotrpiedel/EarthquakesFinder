@@ -14,8 +14,8 @@ import static util.MapUtil.getEntriesSortedByValue;
 import static util.MapUtil.sortByValue;
 
 public class EarthquakesService {
-    private DistanceCalculator distanceCalculator;
-    private EarthquakesApiClient earthquakesApiClient;
+    private final DistanceCalculator distanceCalculator;
+    private final EarthquakesApiClient earthquakesApiClient;
 
     public EarthquakesService(DistanceCalculator distanceCalculator, EarthquakesApiClient earthquakesApiClient) {
         this.distanceCalculator = distanceCalculator;
@@ -23,17 +23,17 @@ public class EarthquakesService {
     }
 
     public Map<EarthquakeBasicInfo, Double> getNearestEarthquakesSortedByDistanceDistinct(Coordinates coordinates, int earthquakesToDisplay) {
-        List<EarthquakeBasicInfo> earthquakePlaceToCoordinates = EarthquakeBasicInfo.mapFeaturesToEarthquakePlaceToCoordinatesList(earthquakesApiClient.getFeaturesFromEndpoint());
+        List<EarthquakeBasicInfo> earthquakeBasicInfos = EarthquakeBasicInfo.mapFeaturesToEarthquakeBasicInfos(earthquakesApiClient.getFeaturesFromEndpoint());
 
-        List<EarthquakeBasicInfo> filteredEarthquakes = EarthquakeBasicInfo.filterEarthquakesWithCoordinatesDuplicates(earthquakePlaceToCoordinates);
+        List<EarthquakeBasicInfo> filteredEarthquakes = EarthquakeBasicInfo.filterEarthquakesWithDuplicatedCoordinates(earthquakeBasicInfos);
 
-        Map<EarthquakeBasicInfo, Double> earthquakesSortedByDistance = sortByValue(mapEarthquakesListToEarthQuakesToDistanceMap(filteredEarthquakes, coordinates));
+        Map<EarthquakeBasicInfo, Double> earthquakesSortedByDistance = sortByValue(mapEarthquakesToEarthquakesBasicInfosToDistance(filteredEarthquakes, coordinates));
 
         return getEntriesSortedByValue(earthquakesSortedByDistance, earthquakesToDisplay);
     }
 
-    public Map<EarthquakeBasicInfo, Double> mapEarthquakesListToEarthQuakesToDistanceMap(List<EarthquakeBasicInfo> earthquakePlaceToCoordinates, Coordinates coordinatesToMeasureDistanceFrom) {
-        return earthquakePlaceToCoordinates
+    public Map<EarthquakeBasicInfo, Double> mapEarthquakesToEarthquakesBasicInfosToDistance(List<EarthquakeBasicInfo> earthquakeBasicInfos, Coordinates coordinatesToMeasureDistanceFrom) {
+        return earthquakeBasicInfos
                 .stream()
                 .collect(Collectors.toMap(Function.identity(), it -> distanceCalculator.calculateDistance(it.getCoordinates(), coordinatesToMeasureDistanceFrom)));
     }
@@ -49,6 +49,4 @@ public class EarthquakesService {
         });
         return stringBuilder.toString();
     }
-
-
 }
