@@ -22,6 +22,11 @@ public class EarthquakeBasicInfo {
         this.coordinates = coordinates;
     }
 
+    public EarthquakeBasicInfo(Feature feature) {
+        this.place = feature.getProperty("title");
+        this.coordinates = new Coordinates((Point) feature.getGeometry());
+    }
+
     public String getPlace() {
         return place;
     }
@@ -38,14 +43,14 @@ public class EarthquakeBasicInfo {
         this.coordinates = coordinates;
     }
 
-    public static List<EarthquakeBasicInfo> mapFeaturesToEarthquakePlaceToCoordinatesList(List<Feature> featureList) {
+    public static List<EarthquakeBasicInfo> mapFeaturesToEarthquakeBasicInfos(List<Feature> featureList) {
         return featureList
                 .stream()
-                .map(it -> new EarthquakeBasicInfo(it.getProperty("place"), (Point) it.getGeometry()))
+                .map(EarthquakeBasicInfo::new)
                 .collect(Collectors.toList());
     }
 
-    public static List<EarthquakeBasicInfo> filterEarthquakesWithCoordinatesDuplicates(List<EarthquakeBasicInfo> earthquakeBasicInfoList) {
+    public static List<EarthquakeBasicInfo> filterEarthquakesWithDuplicatedCoordinates(List<EarthquakeBasicInfo> earthquakeBasicInfoList) {
         Set<Coordinates> set = new HashSet<>();
         return earthquakeBasicInfoList
                 .stream()
