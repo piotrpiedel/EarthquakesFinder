@@ -8,18 +8,7 @@ public class Longitude extends GeographicCoordinate {
         super(value);
     }
 
-    public Longitude(String value) {
-        super(value);
+    public static Longitude parseValueToLongitude(String line) {
+        return new Longitude(parse(line, LOWEST_LONGITUDE, HIGHEST_LONGITUDE));
     }
-
-    @Override
-    protected double getLowestValue() {
-        return LOWEST_LONGITUDE;
-    }
-
-    @Override
-    protected double getHighestValue() {
-        return HIGHEST_LONGITUDE;
-    }
-
 }

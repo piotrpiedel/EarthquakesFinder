@@ -139,3 +139,5 @@ gradle-app.setting
 .idea/jarRepositories.xml
 .idea/misc.xml
 .idea/vcs.xml
+.idea/GeoJSON_EarthquakesClient.iml
+.idea/.name

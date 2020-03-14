@@ -14,10 +14,6 @@ public class Coordinates {
     }
 
     public Coordinates(Point point) {
-        mapPointToCoordinates(point);
-    }
-
-    private void mapPointToCoordinates(Point point) {
         this.latitude = new Latitude(point.getCoordinates().getLatitude());
         this.longitude = new Longitude(point.getCoordinates().getLatitude());
     }

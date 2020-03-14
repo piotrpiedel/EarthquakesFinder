@@ -4,11 +4,13 @@ import domain.Coordinates;
 import domain.Latitude;
 import domain.Longitude;
 import service.EarthquakesService;
+import service.PrintNearbyEarthquakes;
+import service.ReadUserInput;
 
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
+
 
     public static void main(String[] args) {
         run();
@@ -17,20 +19,17 @@ public class Main {
     private static void run() {
         final int earthQuakesToDisplay = 10;
         EarthquakesService earthquakesService = new EarthquakesService(new DistanceCalculatorHaversine(), new MonthAllEarthquakes());
+        ReadUserInput readUserInput = new ReadUserInput(new Scanner(System.in));
+        PrintNearbyEarthquakes printNearbyEarthquakes = new PrintNearbyEarthquakes();
 
         while (true) {
-            System.out.println("\n");
-            System.out.println("Enter coordinates to find ten nearest earthquakes from last month in order latitude, longitude");
-            System.out.println("Enter latitude from range [-90.0, 90.0]");
-            String latitudeInput = scanner.nextLine();
-            System.out.println("Enter longitude from range [-180.0,180.0]");
-            String longitudeInput = scanner.nextLine();
+            readUserInput.readUserInput();
             try {
-                Latitude latitude = new Latitude(latitudeInput);
-                Longitude longitude = new Longitude(longitudeInput);
+                Latitude latitude = Latitude.parseValueToLatitude(readUserInput.getLatitudeInput());
+                Longitude longitude = Longitude.parseValueToLongitude(readUserInput.getLongitudeInput());
                 System.out.println("Ten nearest earthquakes from last month to given coordinates");
 
-                System.out.println(earthquakesService.getPrintableNearbyEarthquakes(
+                System.out.println(printNearbyEarthquakes.getPrintableNearbyEarthquakes(
                         earthquakesService
                                 .getNearestEarthquakesSortedByDistanceDistinct(
                                         new Coordinates(latitude, longitude), earthQuakesToDisplay)));
