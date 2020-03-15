@@ -10,9 +10,10 @@ import java.net.URL;
 import java.util.List;
 
 public abstract class EarthquakesApiClient {
+
     protected abstract String getEarthquakesURLEndpoint();
 
-    public List<Feature> getFeaturesFromEndpoint() {
+    public List<Feature> getFeaturesFromEndpoint() throws IOException {
         List<Feature> featureList = null;
         try {
             featureList = new ObjectMapper()
@@ -21,8 +22,10 @@ public abstract class EarthquakesApiClient {
                     .getFeatures();
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Given endpoint is not correct");
+            throw e;
         }
+
         return featureList;
     }
 }

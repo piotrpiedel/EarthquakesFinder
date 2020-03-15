@@ -9,6 +9,6 @@ public class Latitude extends GeographicCoordinate {
     }
 
     public static Latitude parseValueToLatitude(String line) {
-        return new Latitude(parse(line, LOWEST_LATITUDE, HIGHEST_LATITUDE));
+        return new Latitude(checkValueWithGivenRangeAndParseValueToDouble(line, LOWEST_LATITUDE, HIGHEST_LATITUDE));
     }
 }

@@ -8,14 +8,14 @@ public class Coordinates {
     private Latitude latitude;
     private Longitude longitude;
 
-    public Coordinates(Latitude latitude, Longitude longitude) {
+    public Coordinates(Longitude longitude, Latitude latitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
     public Coordinates(Point point) {
         this.latitude = new Latitude(point.getCoordinates().getLatitude());
-        this.longitude = new Longitude(point.getCoordinates().getLatitude());
+        this.longitude = new Longitude(point.getCoordinates().getLongitude());
     }
 
     public Longitude getLongitude() {

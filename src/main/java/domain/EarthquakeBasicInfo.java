@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class EarthquakeBasicInfo {
+
     private String place;
     private Coordinates coordinates;
 
@@ -31,16 +32,8 @@ public class EarthquakeBasicInfo {
         return place;
     }
 
-    public void setPlace(String place) {
-        this.place = place;
-    }
-
     public Coordinates getCoordinates() {
         return coordinates;
-    }
-
-    public void setCoordinates(Coordinates coordinates) {
-        this.coordinates = coordinates;
     }
 
     public static List<EarthquakeBasicInfo> mapFeaturesToEarthquakeBasicInfos(List<Feature> featureList) {
