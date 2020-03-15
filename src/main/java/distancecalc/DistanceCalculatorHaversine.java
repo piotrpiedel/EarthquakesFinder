@@ -6,7 +6,7 @@ import static java.lang.Math.sin;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.toRadians;
 
-public class DistanceCalculatorHaversine extends DistanceCalculator {
+public class DistanceCalculatorHaversine implements DistanceCalculator {
     private static final int EARTH_RADIUS = 6371;  // Earth radius in km
 
     @Override

@@ -1,8 +1,7 @@
-package util;
+package domain;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import domain.EarthquakeBasicInfo;
 import org.geojson.Feature;
 import org.geojson.FeatureCollection;
 import org.junit.Before;
@@ -14,7 +13,7 @@ import java.util.List;
 import static domain.EarthquakeBasicInfo.mapFeaturesToEarthquakeBasicInfos;
 import static org.junit.Assert.assertEquals;
 
-public class EarthquakesServiceTest {
+public class EarthquakeBasicInfoTest {
 
     List<Feature> featureList = null;
     List<EarthquakeBasicInfo> earthquakePlaceToCoordinates = null;
@@ -39,4 +38,5 @@ public class EarthquakesServiceTest {
     public void filterEarthquakesWithCoordinatesFrom21WithDuplicatesTo19Unique() {
         assertEquals(19, EarthquakeBasicInfo.filterEarthquakesWithDuplicatedCoordinates(earthquakePlaceToCoordinates).size());
     }
+
 }
