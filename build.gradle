@@ -7,9 +7,10 @@ group 'org.piedel.piotr'
 version '1.0-SNAPSHOT'
 
 ext {
-    geojsonJackson = '1.12'
-    jacksonCore = '2.10.2'
-    junit = '4.12'
+    geojsonJacksonVersion = '1.12'
+    jacksonCoreVersion = '2.10.2'
+    lombokVersion = '1.18.12'
+    junitVersion = '4.13'
 }
 
 sourceCompatibility = 1.8
@@ -29,9 +30,14 @@ jar {
 }
 
 dependencies {
-    compile "de.grundid.opendatalab:geojson-jackson:${geojsonJackson}"
-    compile "com.fasterxml.jackson.core:jackson-core:${jacksonCore}"
-    compile "com.fasterxml.jackson.core:jackson-databind:${jacksonCore}"
-    compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonCore}"
-    testImplementation('junit:junit:4.13')
+    compile "de.grundid.opendatalab:geojson-jackson:${geojsonJacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-core:${jacksonCoreVersion}"
+    compile "com.fasterxml.jackson.core:jackson-databind:${jacksonCoreVersion}"
+    compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonCoreVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testImplementation("junit:junit:${junitVersion}")
 }
