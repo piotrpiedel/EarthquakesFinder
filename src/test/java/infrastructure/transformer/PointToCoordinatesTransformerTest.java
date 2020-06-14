@@ -23,7 +23,8 @@ public class PointToCoordinatesTransformerTest {
         double latitudeValue = 20.0;
 
         //when
-        Coordinates coordinates = pointToCoordinatesTransformer.map(new Point(longitudeValue, latitudeValue));
+        Coordinates coordinates = pointToCoordinatesTransformer
+                .map(new Point(longitudeValue, latitudeValue));
 
         //then
         assertEquals(30, coordinates.getLongitude().getValue(), 0.00001);

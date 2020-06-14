@@ -1,14 +1,7 @@
 package infrastructure.exception;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
-
 import java.io.IOException;
 
-@Getter
-@ToString
-@AllArgsConstructor
 public class IncorrectEndpointException extends IOException {
 
     public IncorrectEndpointException(String message) {

@@ -17,9 +17,9 @@ public class FeatureToEarthquakeBasicInfoTransformer {
                 .collect(Collectors.toList());
     }
 
-
     public EarthquakeBasicInfo map(Feature feature) {
-        return new EarthquakeBasicInfo(feature.getProperty("title"),
+        return new EarthquakeBasicInfo(
+                feature.getProperty("title"),
                 pointToCoordinatesTransformer.map((Point) feature.getGeometry()));
     }
 }

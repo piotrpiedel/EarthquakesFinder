@@ -30,13 +30,15 @@ public class EarthquakesServiceTest {
 
         featureList = new ObjectMapper()
                 .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-                .readValue(new FileReader("src/test/resources/jsonWithCoordinatesDuplicates.txt"), FeatureCollection.class)
+                .readValue(
+                        new FileReader("src/test/resources/jsonWithCoordinatesDuplicates.txt"),
+                        FeatureCollection.class)
                 .getFeatures();
 
         featureToEarthquakeBasicInfoTransformer = new FeatureToEarthquakeBasicInfoTransformer();
-        earthquakePlaceToCoordinates = featureToEarthquakeBasicInfoTransformer.map(featureList);
+        earthquakePlaceToCoordinates = featureToEarthquakeBasicInfoTransformer
+                .map(featureList);
     }
-
 
     @Test
     public void filterEarthquakesWithCoordinatesFrom21WithDuplicatesTo19Unique() {
@@ -44,7 +46,8 @@ public class EarthquakesServiceTest {
         //File jsonWithCoordinatesDuplicates.txt has 21 earthquakes and 3 duplicates so it should be 19 after filter
 
         //when
-        int result = earthquakesService.filterEarthquakesWithDuplicatedCoordinates(earthquakePlaceToCoordinates).size();
+        int result = earthquakesService
+                .filterEarthquakesWithDuplicatedCoordinates(earthquakePlaceToCoordinates).size();
 
         //then
         assertEquals(19, result);

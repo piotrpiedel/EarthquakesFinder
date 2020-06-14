@@ -7,4 +7,6 @@ public interface RequestForUserInputPrinter {
     void printRequestForLongitude();
 
     void printRequestForEarthquakesNumberToDisplay();
+
+    void printRequestToUserHowToExitProgram();
 }

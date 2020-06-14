@@ -5,7 +5,6 @@ import domain.model.Latitude;
 import domain.model.Longitude;
 import org.geojson.Point;
 
-
 public class PointToCoordinatesTransformer {
 
     public Coordinates map(Point point) {

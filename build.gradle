@@ -11,6 +11,7 @@ ext {
     jacksonCoreVersion = '2.10.2'
     lombokVersion = '1.18.12'
     junitVersion = '4.13'
+    slf4j = '1.7.25'
 }
 
 sourceCompatibility = 1.8
@@ -36,6 +37,7 @@ dependencies {
     compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonCoreVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: "${slf4j}"
 
     testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
     testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"

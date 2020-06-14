@@ -16,7 +16,8 @@ public class CoordinatesTest {
         double latitudeValue = 20.0;
 
         //when
-        Coordinates coordinates = new Coordinates(new Longitude(longitudeValue), new Latitude(latitudeValue));
+        Coordinates coordinates = new Coordinates(
+                new Longitude(longitudeValue), new Latitude(latitudeValue));
 
         //then
         assertEquals(30, coordinates.getLongitude().getValue(), 0.00001);

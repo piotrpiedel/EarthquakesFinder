@@ -8,19 +8,20 @@ import java.util.List;
 @UtilityClass
 public class EarthquakesInfoFormatter {
 
-    public static String formatEarthquakesToConsolePrintableOutput(List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> earthquakes) {
+    public static String formatEarthquakesToConsolePrintableOutput(
+            List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> earthquakes) {
         StringBuilder stringBuilder = new StringBuilder();
         earthquakes.forEach((earthquake) -> {
             if (stringBuilder.toString().isEmpty()) {
                 stringBuilder
                         .append(earthquake.getEarthquakeBasicInfo().getPlace())
                         .append(" || ")
-                        .append(earthquake.getDistanceToEarthquake().toString());
+                        .append(earthquake.getDistanceToEarthquake());
             } else {
                 stringBuilder.append("\n")
                         .append(earthquake.getEarthquakeBasicInfo().getPlace()).
                         append(" || ")
-                        .append(earthquake.getDistanceToEarthquake().toString());
+                        .append(earthquake.getDistanceToEarthquake());
             }
         });
         return stringBuilder.toString();

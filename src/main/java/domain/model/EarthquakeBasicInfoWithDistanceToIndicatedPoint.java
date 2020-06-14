@@ -9,13 +9,16 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @AllArgsConstructor
-public class EarthquakeBasicInfoWithDistanceToIndicatedPoint implements Comparable<EarthquakeBasicInfoWithDistanceToIndicatedPoint> {
+public class EarthquakeBasicInfoWithDistanceToIndicatedPoint implements
+        Comparable<EarthquakeBasicInfoWithDistanceToIndicatedPoint> {
 
     private final EarthquakeBasicInfo earthquakeBasicInfo;
     private final Double distanceToEarthquake;
 
     @Override
-    public int compareTo(EarthquakeBasicInfoWithDistanceToIndicatedPoint earthquakeBasicInfoWithDistanceToIndicatedPoint) {
-        return this.distanceToEarthquake.compareTo(earthquakeBasicInfoWithDistanceToIndicatedPoint.distanceToEarthquake);
+    public int compareTo(
+            EarthquakeBasicInfoWithDistanceToIndicatedPoint earthquakeBasicInfoWithDistanceToIndicatedPoint) {
+        return distanceToEarthquake
+                .compareTo(earthquakeBasicInfoWithDistanceToIndicatedPoint.distanceToEarthquake);
     }
 }

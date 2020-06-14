@@ -5,7 +5,7 @@ import domain.model.Coordinates;
 import domain.model.EarthquakeBasicInfo;
 import domain.model.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
 import infrastructure.client.EarthquakesApiClient;
-import infrastructure.exception.IncorrectEndpoint;
+import infrastructure.exception.IncorrectEndpointException;
 import infrastructure.transformer.FeatureToEarthquakeBasicInfoTransformer;
 
 import java.util.Collections;
@@ -19,21 +19,26 @@ public class EarthquakesService {
     private final EarthquakesApiClient earthquakesApiClient;
     private final FeatureToEarthquakeBasicInfoTransformer featureToEarthquakeBasicInfoTransformer;
 
-    public EarthquakesService(DistanceCalculator distanceCalculator,
-                              EarthquakesApiClient earthquakesApiClient,
-                              FeatureToEarthquakeBasicInfoTransformer featureToEarthquakeBasicInfoTransformer) {
+    public EarthquakesService(
+            DistanceCalculator distanceCalculator,
+            EarthquakesApiClient earthquakesApiClient,
+            FeatureToEarthquakeBasicInfoTransformer featureToEarthquakeBasicInfoTransformer) {
         this.distanceCalculator = distanceCalculator;
         this.earthquakesApiClient = earthquakesApiClient;
         this.featureToEarthquakeBasicInfoTransformer = featureToEarthquakeBasicInfoTransformer;
     }
 
-    public List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> getNearestEarthquakesSortedByDistanceDistinct(Coordinates coordinates, int earthquakesToDisplay) throws IncorrectEndpoint {
+    public List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> getNearestEarthquakesSortedByDistanceDistinct(
+            Coordinates coordinates, int earthquakesToDisplay) throws IncorrectEndpointException {
 
-        List<EarthquakeBasicInfo> earthquakeBasicInfos = featureToEarthquakeBasicInfoTransformer.map(earthquakesApiClient.getAllEarthquakesFromPastMonthApiClient());
+        List<EarthquakeBasicInfo> earthquakeBasicInfos = featureToEarthquakeBasicInfoTransformer
+                .map(earthquakesApiClient.getAllEarthquakesFromPastMonthApiClient());
 
-        List<EarthquakeBasicInfo> filteredEarthquakes = filterEarthquakesWithDuplicatedCoordinates(earthquakeBasicInfos);
+        List<EarthquakeBasicInfo> filteredEarthquakes = filterEarthquakesWithDuplicatedCoordinates(
+                earthquakeBasicInfos);
 
-        List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> earthquakeBasicInfosWithDistanceToPoints = calculateEarthquakeDistanceToCoordinates(filteredEarthquakes, coordinates);
+        List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> earthquakeBasicInfosWithDistanceToPoints = calculateEarthquakeDistanceToCoordinates(
+                filteredEarthquakes, coordinates);
 
         Collections.sort(earthquakeBasicInfosWithDistanceToPoints);
 
@@ -43,17 +48,22 @@ public class EarthquakesService {
                 .collect(Collectors.toList());
     }
 
-    public List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> calculateEarthquakeDistanceToCoordinates(List<EarthquakeBasicInfo> earthquakeBasicInfos, Coordinates coordinatesToMeasureDistanceTo) {
+    public List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> calculateEarthquakeDistanceToCoordinates(
+            List<EarthquakeBasicInfo> earthquakeBasicInfos,
+            Coordinates coordinatesToMeasureDistanceTo) {
         return earthquakeBasicInfos
                 .stream()
                 .map(earthquakeBasicInfo ->
-                        new EarthquakeBasicInfoWithDistanceToIndicatedPoint(earthquakeBasicInfo,
-                                distanceCalculator.calculateDistance(earthquakeBasicInfo.getCoordinates(), coordinatesToMeasureDistanceTo)))
+                        new EarthquakeBasicInfoWithDistanceToIndicatedPoint(
+                                earthquakeBasicInfo,
+                                distanceCalculator.calculateDistance(
+                                        earthquakeBasicInfo.getCoordinates(),
+                                        coordinatesToMeasureDistanceTo)))
                 .collect(Collectors.toList());
     }
 
-
-    public List<EarthquakeBasicInfo> filterEarthquakesWithDuplicatedCoordinates(List<EarthquakeBasicInfo> earthquakeBasicInfoList) {
+    public List<EarthquakeBasicInfo> filterEarthquakesWithDuplicatedCoordinates(
+            List<EarthquakeBasicInfo> earthquakeBasicInfoList) {
         Set<Coordinates> set = new HashSet<>();
         return earthquakeBasicInfoList
                 .stream()

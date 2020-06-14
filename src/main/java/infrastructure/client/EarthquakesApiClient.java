@@ -2,7 +2,7 @@ package infrastructure.client;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import infrastructure.exception.IncorrectEndpoint;
+import infrastructure.exception.IncorrectEndpointException;
 import org.geojson.Feature;
 import org.geojson.FeatureCollection;
 
@@ -14,7 +14,8 @@ import static application.configuration.DataSource.ALL_EARTHQUAKES_FROM_PAST_MON
 
 public class EarthquakesApiClient {
 
-    public List<Feature> getFeaturesFromEndpoint(String earthquakesEndpointUrl) throws IncorrectEndpoint {
+    public List<Feature> getFeaturesFromEndpoint(String earthquakesEndpointUrl)
+            throws IncorrectEndpointException {
         List<Feature> featureList;
         try {
             featureList = new ObjectMapper()
@@ -24,13 +25,13 @@ public class EarthquakesApiClient {
 
         } catch (IOException e) {
             System.out.println("Given endpoint is not correct");
-            throw new IncorrectEndpoint("Given endpoint is not correct");
+            throw new IncorrectEndpointException("Given endpoint is not correct", e);
         }
-
         return featureList;
     }
 
-    public List<Feature> getAllEarthquakesFromPastMonthApiClient() throws IncorrectEndpoint {
+    public List<Feature> getAllEarthquakesFromPastMonthApiClient()
+            throws IncorrectEndpointException {
         return getFeaturesFromEndpoint(ALL_EARTHQUAKES_FROM_PAST_MONTH_ENDPOINT);
     }
 }

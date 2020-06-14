@@ -18,8 +18,9 @@ public class HaversineDistanceCalculatorTest {
         double latitudeValueDestinationPoint = 19.944544;
 
         //when
-        double result = distanceCalculator.calculateDistance(longitudeValueStartPoint, latitudeValueStartPoint, longitudeValueDestinationPoint, latitudeValueDestinationPoint);
-
+        double result = distanceCalculator
+                .calculateDistance(longitudeValueStartPoint, latitudeValueStartPoint,
+                        longitudeValueDestinationPoint, latitudeValueDestinationPoint);
 
         //then
         //expected result from site https://www.movable-type.co.uk/scripts/latlong.html

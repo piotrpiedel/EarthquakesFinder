@@ -14,18 +14,19 @@ import static org.junit.Assert.assertEquals;
 
 public class FeatureToEarthquakeBasicInfoTransformerTest {
 
-    FeatureToEarthquakeBasicInfoTransformer featureToEarthquakeBasicInfoTransformer = null;
-    List<Feature> featureList = null;
+    FeatureToEarthquakeBasicInfoTransformer featureToEarthquakeBasicInfoTransformer;
+    List<Feature> featureList;
 
     @Before
     public void setUp() throws Exception {
         featureList = new ObjectMapper()
                 .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-                .readValue(new FileReader("src/test/resources/jsonWithCoordinatesDuplicates.txt"), FeatureCollection.class)
+                .readValue(
+                        new FileReader("src/test/resources/jsonWithCoordinatesDuplicates.txt"),
+                        FeatureCollection.class)
                 .getFeatures();
         featureToEarthquakeBasicInfoTransformer = new FeatureToEarthquakeBasicInfoTransformer();
     }
-
 
     @Test
     public void mapFeaturesToTheSameNumberOfEarthquakesPlacesToCoordinates() {
@@ -37,7 +38,6 @@ public class FeatureToEarthquakeBasicInfoTransformerTest {
 
         //then
         assertEquals(21, result);
-
 
     }
 }
