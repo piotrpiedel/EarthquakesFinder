@@ -8,7 +8,7 @@ import java.util.List;
 @UtilityClass
 public class EarthquakesInfoFormatter {
 
-    public String formatEarthquakesToConsolePrintableOutput(
+    public static String formatEarthquakesToConsolePrintableOutput(
             List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> earthquakes) {
         StringBuilder stringBuilder = new StringBuilder();
         earthquakes.forEach(earthquake -> {

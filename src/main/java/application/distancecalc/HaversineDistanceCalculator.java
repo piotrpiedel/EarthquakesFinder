@@ -1,10 +1,6 @@
 package application.distancecalc;
 
-import static java.lang.Math.atan2;
-import static java.lang.Math.cos;
-import static java.lang.Math.sin;
-import static java.lang.Math.sqrt;
-import static java.lang.Math.toRadians;
+import static java.lang.Math.*;
 
 public class HaversineDistanceCalculator implements DistanceCalculator {
 
