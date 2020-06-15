@@ -20,7 +20,7 @@ public class UserInputToCoordinatesTest {
         String line = "50";
 
         //when
-        double result = userInputToCoordinates.checkLatitudeRangeAndParseValue(line);
+        double result = userInputToCoordinates.validateLatitudeRangeAndParseValue(line);
 
         //then
         assertEquals(50, result, 0.00001);
@@ -32,7 +32,7 @@ public class UserInputToCoordinatesTest {
         String line = "50";
 
         //when
-        double result = userInputToCoordinates.checkLongitudeRangeAndParseValue(line);
+        double result = userInputToCoordinates.validateLongitudeAndParseValue(line);
 
         //then
         assertEquals(50, result, 0.00001);

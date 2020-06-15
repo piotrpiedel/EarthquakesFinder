@@ -1,6 +1,6 @@
 package infrastructure.transformer;
 
-import domain.model.CoordinatesValues;
+import domain.model.CoordinatesRanges;
 import infrastructure.exception.IncorrectCoordinateValueException;
 import infrastructure.exception.IncorrectCoordinateValueRangeException;
 import org.apache.log4j.Logger;
@@ -9,52 +9,51 @@ public class UserInputToCoordinates {
 
     private static final Logger logger = Logger.getLogger(UserInputToCoordinates.class);
 
-    public double checkLatitudeRangeAndParseValue(String line) {
+    public double validateLatitudeRangeAndParseValue(String line) {
         try {
-            return checkValueWithGivenRangeAndParseValueToDouble(
+            return validateValueWithGivenRangeAndParseValueToDouble(
                     line,
-                    CoordinatesValues.LOWEST_LATITUDE.getValue(),
-                    CoordinatesValues.HIGHEST_LATITUDE.getValue());
+                    CoordinatesRanges.LATITUDE);
         } catch (IncorrectCoordinateValueRangeException | IncorrectCoordinateValueException e) {
             logger.error("Given latitude is incorrect", e);
         }
         return 0d;
     }
 
-    public double checkLongitudeRangeAndParseValue(String line) {
+    public double validateLongitudeAndParseValue(String line) {
         try {
-            return checkValueWithGivenRangeAndParseValueToDouble(
+            return validateValueWithGivenRangeAndParseValueToDouble(
                     line,
-                    CoordinatesValues.LOWEST_LONGITUDE.getValue(),
-                    CoordinatesValues.HIGHEST_LONGITUDE.getValue());
+                    CoordinatesRanges.LONGITUDE);
         } catch (IncorrectCoordinateValueRangeException | IncorrectCoordinateValueException e) {
             logger.error("Given longitude is incorrect", e);
         }
         return 0d;
     }
 
-    private double checkValueWithGivenRangeAndParseValueToDouble(
-            String line, double lowestValue, double highestValue)
+    private double validateValueWithGivenRangeAndParseValueToDouble(
+            String line,
+            CoordinatesRanges coordinatesRanges)
             throws IncorrectCoordinateValueRangeException, IncorrectCoordinateValueException {
         if (isNotNullBlankOrEmpty(line)) {
             throw new IllegalArgumentException("Values can't be blank!");
         }
         try {
             double coordinate = Double.parseDouble(line);
-            if (isValueInCorrectRange(lowestValue, highestValue, coordinate)) {
+            if (isValueInCorrectRange(coordinate, coordinatesRanges)) {
                 return coordinate;
             }
             throw new IncorrectCoordinateValueRangeException(
-                    "Value can have range from: " + lowestValue + " to: "
-                            + highestValue);
+                    "Value can have range from: " + coordinatesRanges.getLowestValue() + " to: "
+                            + coordinatesRanges.getHighestValue());
         } catch (NumberFormatException e) {
             throw new IncorrectCoordinateValueException("Please enter correct value!", e);
         }
     }
 
-    private boolean isValueInCorrectRange(
-            double lowestValue, double highestValue, double coordinate) {
-        return coordinate >= lowestValue && coordinate <= highestValue;
+    private boolean isValueInCorrectRange(double coordinate, CoordinatesRanges coordinatesRanges) {
+        return coordinate >= coordinatesRanges.getLowestValue() && coordinate <= coordinatesRanges
+                .getHighestValue();
     }
 
     private boolean isNotNullBlankOrEmpty(String line) {
