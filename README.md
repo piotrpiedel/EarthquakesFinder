@@ -1,4 +1,4 @@
-# Nearby earthquakes APIClient
+# Earthquakes finder
 
 Program shows 10 nearest earthquakes from past month for given coordinates.
 
