@@ -7,7 +7,8 @@ import static java.lang.Math.sqrt;
 import static java.lang.Math.toRadians;
 
 public class HaversineDistanceCalculator implements DistanceCalculator {
-    private static final int EARTH_RADIUS = 6371;  // Earth radius in km
+
+    private static final int EARTH_RADIUS_IN_KILOMETERS_UNIT = 6371;
 
     @Override
     public double calculateDistance(
@@ -22,6 +23,6 @@ public class HaversineDistanceCalculator implements DistanceCalculator {
         double angularDistanceInRadians = 2 * atan2(
                 sqrt(squareOfHalfChordLengthBetweenPoints),
                 sqrt(1 - squareOfHalfChordLengthBetweenPoints));
-        return angularDistanceInRadians * EARTH_RADIUS;
+        return angularDistanceInRadians * EARTH_RADIUS_IN_KILOMETERS_UNIT;
     }
 }
