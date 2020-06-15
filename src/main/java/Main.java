@@ -69,7 +69,7 @@ public final class Main {
 
         return new Latitude(
                 USER_INPUT_TO_COORDINATES
-                        .checkLatitudeRangeAndParseValue(latitudeInput));
+                        .validateLatitudeRangeAndParseValue(latitudeInput));
     }
 
     private static Longitude getLongitudeFromUser() {
@@ -78,7 +78,7 @@ public final class Main {
 
         return new Longitude(
                 USER_INPUT_TO_COORDINATES
-                        .checkLongitudeRangeAndParseValue(longitudeInput));
+                        .validateLongitudeAndParseValue(longitudeInput));
     }
 
     private static int getEarthQuakesNumberToDisplay() {
@@ -97,7 +97,7 @@ public final class Main {
     }
 
     private static boolean shouldExitProgram(String userInputIfExitProgram) {
-        return !userInputIfExitProgram.isEmpty() && userInputIfExitProgram.equalsIgnoreCase("q");
+        return !userInputIfExitProgram.isEmpty() && "q".equalsIgnoreCase(userInputIfExitProgram);
     }
 
 }
