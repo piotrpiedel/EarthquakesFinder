@@ -38,7 +38,8 @@ public final class Main {
                 new HaversineDistanceCalculator(),
                 new EarthquakesApiClient(), new FeatureToEarthquakeBasicInfoTransformer());
 
-        while (true) {
+        String userInputToExitProgram;
+        do {
             Latitude latitude = getLatitudeFromUser();
             Longitude longitude = getLongitudeFromUser();
             int earthQuakesNumberToDisplay = getEarthQuakesNumberToDisplay();
@@ -56,11 +57,13 @@ public final class Main {
             EARTHQUAKES_PRINTER_TO_CONSOLE
                     .printNearbyEarthquakes(nearestEarthquakesSortedByDistanceDistinct);
 
-            String userInputFromExitProgramRequest = printRequestToUserHowToExitProgramAndReadInput();
-            if (shouldExitProgram(userInputFromExitProgramRequest)) {
-                break;
-            }
+            userInputToExitProgram = printRequestToUserHowToExitProgramAndReadInput();
         }
+        while (isNotUserExitingProgram(userInputToExitProgram));
+    }
+
+    private static boolean isNotUserExitingProgram(String userInputToExitProgram) {
+        return !"q".equalsIgnoreCase(userInputToExitProgram);
     }
 
     private static Latitude getLatitudeFromUser() {
@@ -94,10 +97,6 @@ public final class Main {
     private static String printRequestToUserHowToExitProgramAndReadInput() {
         REQUEST_FOR_USER_INPUT_PRINTER.printRequestToUserHowToExitProgram();
         return USER_INPUT_SCANNER.readUserInput();
-    }
-
-    private static boolean shouldExitProgram(String userInputIfExitProgram) {
-        return !userInputIfExitProgram.isEmpty() && "q".equalsIgnoreCase(userInputIfExitProgram);
     }
 
 }
