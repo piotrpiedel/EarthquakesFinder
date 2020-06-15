@@ -22,6 +22,6 @@ public enum CoordinatesRanges {
     }
 
     public double getHighestValue() {
-        return lowestValue;
+        return highestValue;
     }
 }

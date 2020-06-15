@@ -26,6 +26,6 @@ public class RequestForUserInputPrinterToConsole implements RequestForUserInputP
 
     @Override
     public void printRequestToUserHowToExitProgram() {
-        printRequestToUser("Write q and press enter to exit program");
+        printRequestToUser("Write q to exit program and press enter. Leave empty and press enter to continue");
     }
 }
