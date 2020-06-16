@@ -20,12 +20,12 @@ public class RequestForUserInputPrinterToConsole implements RequestForUserInputP
     }
 
     private void printRequestToUser(String requestDisplayedToUser) {
-        System.out.println("\n");
         System.out.println(requestDisplayedToUser);
     }
 
     @Override
     public void printRequestToUserHowToExitProgram() {
-        printRequestToUser("Write q to exit program and press enter. Leave empty and press enter to continue");
+        printRequestToUser(
+                "Write q to exit program and press enter. Leave empty and press enter to continue");
     }
 }
