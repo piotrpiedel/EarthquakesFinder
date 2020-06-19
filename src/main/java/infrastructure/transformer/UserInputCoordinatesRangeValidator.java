@@ -3,35 +3,25 @@ package infrastructure.transformer;
 import domain.model.CoordinatesRanges;
 import infrastructure.exception.IncorrectCoordinateValueException;
 import infrastructure.exception.IncorrectCoordinateValueRangeException;
-import org.apache.log4j.Logger;
 
-public class UserInputToCoordinates {
+public class UserInputCoordinatesRangeValidator {
 
-    private static final Logger logger = Logger.getLogger(UserInputToCoordinates.class);
+    public double validateValueWithLatitudeRangeAndConvertToDouble(String line)
+            throws IncorrectCoordinateValueRangeException, IncorrectCoordinateValueException {
+        return validateValueWithGivenRangeAndConvertToDouble(
+                line,
+                CoordinatesRanges.LATITUDE);
 
-    public double validateLatitudeRangeAndParseValue(String line) {
-        try {
-            return validateValueWithGivenRangeAndParseValueToDouble(
-                    line,
-                    CoordinatesRanges.LATITUDE);
-        } catch (IncorrectCoordinateValueRangeException | IncorrectCoordinateValueException e) {
-            logger.error("Given latitude is incorrect", e);
-        }
-        return 0d;
     }
 
-    public double validateLongitudeAndParseValue(String line) {
-        try {
-            return validateValueWithGivenRangeAndParseValueToDouble(
-                    line,
-                    CoordinatesRanges.LONGITUDE);
-        } catch (IncorrectCoordinateValueRangeException | IncorrectCoordinateValueException e) {
-            logger.error("Given longitude is incorrect", e);
-        }
-        return 0d;
+    public double validateValueWithLongitudeRangeAndConvertToDouble(String line)
+            throws IncorrectCoordinateValueRangeException, IncorrectCoordinateValueException {
+        return validateValueWithGivenRangeAndConvertToDouble(
+                line,
+                CoordinatesRanges.LONGITUDE);
     }
 
-    private double validateValueWithGivenRangeAndParseValueToDouble(
+    private double validateValueWithGivenRangeAndConvertToDouble(
             String line,
             CoordinatesRanges coordinatesRanges)
             throws IncorrectCoordinateValueRangeException, IncorrectCoordinateValueException {

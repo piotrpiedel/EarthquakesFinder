@@ -5,9 +5,11 @@ import domain.model.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
 import domain.model.Latitude;
 import domain.model.Longitude;
 import infrastructure.client.EarthquakesApiClient;
+import infrastructure.exception.IncorrectCoordinateValueException;
+import infrastructure.exception.IncorrectCoordinateValueRangeException;
 import infrastructure.exception.IncorrectEndpointException;
 import infrastructure.transformer.FeatureToEarthquakeBasicInfoTransformer;
-import infrastructure.transformer.UserInputToCoordinates;
+import infrastructure.transformer.UserInputCoordinatesRangeValidator;
 import infrastructure.userinteractions.RequestForUserInputPrinter;
 import infrastructure.userinteractions.UserInputScanner;
 import infrastructure.userinteractions.console.EarthquakesPrinterToConsole;
@@ -26,7 +28,7 @@ public final class Main {
             new Scanner(System.in, "UTF-8"));
     private static final RequestForUserInputPrinter REQUEST_FOR_USER_INPUT_PRINTER = new RequestForUserInputPrinterToConsole();
     private static final EarthquakesPrinterToConsole EARTHQUAKES_PRINTER_TO_CONSOLE = new EarthquakesPrinterToConsole();
-    private static final UserInputToCoordinates USER_INPUT_TO_COORDINATES = new UserInputToCoordinates();
+    private static final UserInputCoordinatesRangeValidator USER_INPUT_TO_COORDINATES = new UserInputCoordinatesRangeValidator();
 
     public static void main(String[] args) {
         run();
@@ -67,36 +69,58 @@ public final class Main {
     }
 
     private static Latitude getLatitudeFromUser() {
-        REQUEST_FOR_USER_INPUT_PRINTER.printRequestForLatitude();
-        String latitudeInput = USER_INPUT_SCANNER.readUserInput();
-
-        return new Latitude(
-                USER_INPUT_TO_COORDINATES
-                        .validateLatitudeRangeAndParseValue(latitudeInput));
+        boolean userProvidedCorrectInput = false;
+        double validatedValue = 0;
+        do {
+            REQUEST_FOR_USER_INPUT_PRINTER.printRequestForLatitude();
+            String latitudeInput = USER_INPUT_SCANNER.readNext();
+            try {
+                validatedValue = USER_INPUT_TO_COORDINATES
+                        .validateValueWithLatitudeRangeAndConvertToDouble(latitudeInput);
+                userProvidedCorrectInput = true;
+            } catch (IncorrectCoordinateValueRangeException | IncorrectCoordinateValueException e) {
+                System.out.println("Given latitude is incorrect");
+            }
+        } while (!userProvidedCorrectInput);
+        return new Latitude(validatedValue);
     }
 
     private static Longitude getLongitudeFromUser() {
-        REQUEST_FOR_USER_INPUT_PRINTER.printRequestForLongitude();
-        String longitudeInput = USER_INPUT_SCANNER.readUserInput();
-
-        return new Longitude(
-                USER_INPUT_TO_COORDINATES
-                        .validateLongitudeAndParseValue(longitudeInput));
+        boolean userProvidedCorrectInput = false;
+        double validatedValue = 0;
+        do {
+            REQUEST_FOR_USER_INPUT_PRINTER.printRequestForLongitude();
+            String longitudeInput = USER_INPUT_SCANNER.readNext();
+            try {
+                validatedValue = USER_INPUT_TO_COORDINATES
+                        .validateValueWithLongitudeRangeAndConvertToDouble(longitudeInput);
+                userProvidedCorrectInput = true;
+            } catch (IncorrectCoordinateValueRangeException | IncorrectCoordinateValueException e) {
+                System.out.println("Given longitude is incorrect");
+            }
+        } while (!userProvidedCorrectInput);
+        return new Longitude(validatedValue);
     }
 
     private static int getEarthQuakesNumberToDisplay() {
-        REQUEST_FOR_USER_INPUT_PRINTER.printRequestForEarthquakesNumberToDisplay();
-        try {
-            return Integer.parseInt(USER_INPUT_SCANNER.readUserInput());
-        } catch (NumberFormatException e) {
-            logger.error("Given earthquakes to display number is incorrect", e);
-        }
-        return 0;
+        boolean userProvidedCorrectInput = false;
+        int validatedValue = 0;
+        do {
+            REQUEST_FOR_USER_INPUT_PRINTER.printRequestForEarthquakesNumberToDisplay();
+            String earthquakesNumber = USER_INPUT_SCANNER.readNext();
+            try {
+                validatedValue = Integer.parseInt(earthquakesNumber);
+                userProvidedCorrectInput = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Given earthquakes to display number is incorrect");
+            }
+        } while (!userProvidedCorrectInput);
+        return validatedValue;
     }
 
     private static String printRequestToUserHowToExitProgramAndReadInput() {
         REQUEST_FOR_USER_INPUT_PRINTER.printRequestToUserHowToExitProgram();
-        return USER_INPUT_SCANNER.readUserInput();
+        return USER_INPUT_SCANNER.readNext();
     }
 
 }

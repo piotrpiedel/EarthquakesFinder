@@ -20,10 +20,6 @@ public class EarthquakesInfoFormatter {
         return stringBuilder.toString();
     }
 
-    private static boolean isFirstLineOfOutput(StringBuilder stringBuilder) {
-        return stringBuilder.toString().isEmpty();
-    }
-
     private static void appendEarthquakePlaceToDistance(
             StringBuilder stringBuilder,
             EarthquakeBasicInfoWithDistanceToIndicatedPoint earthquake) {
@@ -31,6 +27,10 @@ public class EarthquakesInfoFormatter {
                 .append(earthquake.getEarthquakeBasicInfo().getPlace())
                 .append(" || ")
                 .append(earthquake.getDistanceToEarthquake());
+    }
+
+    private static boolean isFirstLineOfOutput(StringBuilder stringBuilder) {
+        return stringBuilder.toString().isEmpty();
     }
 
     private static void appendNewLine(StringBuilder stringBuilder) {

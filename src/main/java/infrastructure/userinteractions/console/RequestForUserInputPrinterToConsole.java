@@ -6,17 +6,17 @@ public class RequestForUserInputPrinterToConsole implements RequestForUserInputP
 
     @Override
     public void printRequestForLatitude() {
-        printRequestToUser("Enter latitude from range [-90.0, 90.0]");
+        printRequestToUser("Enter latitude value from range [-90.0, 90.0]");
     }
 
     @Override
     public void printRequestForLongitude() {
-        printRequestToUser("Enter longitude from range [-180.0,180.0]");
+        printRequestToUser("Enter longitude value from range [-180.0,180.0]");
     }
 
     @Override
     public void printRequestForEarthquakesNumberToDisplay() {
-        printRequestToUser("Enter earthquakes to display");
+        printRequestToUser("Enter number of earthquakes to display");
     }
 
     private void printRequestToUser(String requestDisplayedToUser) {
