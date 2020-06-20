@@ -6,13 +6,13 @@ Earthquakes are sort by distance to given point and filtered from duplicates by 
 Application uses API to fetch earthquakes:
 https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
 
-# Run app
+# App requirements
 1. JAVA_HOME variable should be provided to run program;
 2. Import project to your IDE and run.
 3. Lombok plugin is required to properly display code.
-4. To exit write character q and press enter or exit console/program;
+4. Required java - 1.8;
 
-Required java - 1.8;
+# Java version and libraries 
 Application is written using Java 8.
 Libraries used in project:
 - [GeoJson POJOs for Jackson](https://github.com/opendatalab-de/geojson-jackson) [1.12]
@@ -22,7 +22,8 @@ Libraries used in project:
 - [Log4j](https://logging.apache.org/log4j/2.x/)
 
 
-Short example how to use application:
+
+# Short example how to use application:
 1. Start program.
 2. Application will print to console request:
 "Enter latitude value from range [-90.0, 90.0]"
