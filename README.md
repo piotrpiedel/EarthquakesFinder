@@ -7,10 +7,10 @@ Application uses API to fetch earthquakes:
 https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
 
 # App requirements
-1. JAVA_HOME variable should be provided to run program;
+1. JAVA_HOME variable should be provided to run program.
 2. Import project to your IDE and run.
 3. Lombok plugin is required to properly display code.
-4. Required java - 1.8;
+4. Required java - 1.8.
 
 # Java version and libraries 
 Application is written using Java 8.
@@ -23,22 +23,22 @@ Libraries used in project:
 
 
 
-# Short example how to use application:
-1. Start program.
+# Short example how to use application
+1. Start program
 2. Application will print to console request:
 "Enter latitude value from range [-90.0, 90.0]"
-3. Provide correct coordinate value, eg. 50.049683 for Cracow 
+3. Provide correct coordinate value, eg. 50.049683 for Cracow
 4. Application will print to console request: 
-"Enter longitude value from range [-180.0,180.0]".
+"Enter longitude value from range [-180.0,180.0]"
 5. Provide correct coordinate value, eg. 19.944544 for Cracow
-5. Application will print to console request: 
-"Enter number of earthquakes to display". eg. 15
-6. Provide number of earthquakes to display, eg. 15
-7. Program will execute request to API, sort value and print to console. <br>
+6. Application will print to console request: 
+"Enter number of earthquakes to display", eg. 15
+7. Provide number of earthquakes to display, eg. 15
+8. Program will execute request to API, sort value and print to console <br>
 "Ten nearest earthquakes from last month to given coordinates <br>
 Magnitude - place (Direction from the nearest city, country) || Distance to coordinates <br>
 M 3.0 - 5 km NNW of Dubrava, Croatia || 546.995633974797
 ....."
-8. "Write q to exit program and press enter. Leave empty and press enter to continue"
+9. "Write q to exit program and press enter. Leave empty and press enter to continue"
 
 
