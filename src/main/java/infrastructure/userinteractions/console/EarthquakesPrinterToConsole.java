@@ -10,7 +10,7 @@ import static infrastructure.userinteractions.console.EarthquakesInfoFormatter.f
 public class EarthquakesPrinterToConsole implements EarthquakePrinter {
 
     @Override
-    public void printNearbyEarthquakes(
+    public void printEarthquakes(
             List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> nearestDistinctEarthquakesSortedByDistance) {
         System.out.println("Ten nearest earthquakes from last month to given coordinates");
         System.out.println(

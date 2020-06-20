@@ -7,13 +7,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class UserInputCoordinatesRangeValidatorTest {
+public class CoordinatesRangeValidatorTest {
 
-    UserInputCoordinatesRangeValidator userInputToCoordinates;
+    CoordinatesRangeValidator coordinatesRangeValidator;
 
     @Before
     public void setUp() throws Exception {
-        userInputToCoordinates = new UserInputCoordinatesRangeValidator();
+        coordinatesRangeValidator = new CoordinatesRangeValidator();
     }
 
     @Test
@@ -23,7 +23,7 @@ public class UserInputCoordinatesRangeValidatorTest {
         String line = "50";
 
         //when
-        double result = userInputToCoordinates.validateValueWithLatitudeRangeAndConvertToDouble(line);
+        double result = coordinatesRangeValidator.validateValueWithLatitudeRangeAndConvertToDouble(line);
 
         //then
         assertEquals(50, result, 0.00001);
@@ -36,7 +36,7 @@ public class UserInputCoordinatesRangeValidatorTest {
         String line = "50";
 
         //when
-        double result = userInputToCoordinates.validateValueWithLongitudeRangeAndConvertToDouble(line);
+        double result = coordinatesRangeValidator.validateValueWithLongitudeRangeAndConvertToDouble(line);
 
         //then
         assertEquals(50, result, 0.00001);

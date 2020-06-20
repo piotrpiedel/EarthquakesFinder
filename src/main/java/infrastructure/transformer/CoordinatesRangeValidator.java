@@ -4,7 +4,7 @@ import domain.model.CoordinatesRanges;
 import infrastructure.exception.IncorrectCoordinateValueException;
 import infrastructure.exception.IncorrectCoordinateValueRangeException;
 
-public class UserInputCoordinatesRangeValidator {
+public class CoordinatesRangeValidator {
 
     public double validateValueWithLatitudeRangeAndConvertToDouble(String line)
             throws IncorrectCoordinateValueRangeException, IncorrectCoordinateValueException {

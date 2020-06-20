@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface EarthquakePrinter {
 
-    void printNearbyEarthquakes(
+    void printEarthquakes(
             List<EarthquakeBasicInfoWithDistanceToIndicatedPoint> earthquakesToPrint);
 }

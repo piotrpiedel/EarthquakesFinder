@@ -8,8 +8,8 @@ import infrastructure.client.EarthquakesApiClient;
 import infrastructure.exception.IncorrectCoordinateValueException;
 import infrastructure.exception.IncorrectCoordinateValueRangeException;
 import infrastructure.exception.IncorrectEndpointException;
+import infrastructure.transformer.CoordinatesRangeValidator;
 import infrastructure.transformer.FeatureToEarthquakeBasicInfoTransformer;
-import infrastructure.transformer.UserInputCoordinatesRangeValidator;
 import infrastructure.userinteractions.RequestForUserInputPrinter;
 import infrastructure.userinteractions.UserInputScanner;
 import infrastructure.userinteractions.console.EarthquakesPrinterToConsole;
@@ -28,7 +28,7 @@ public final class Main {
             new Scanner(System.in, "UTF-8"));
     private static final RequestForUserInputPrinter REQUEST_FOR_USER_INPUT_PRINTER = new RequestForUserInputPrinterToConsole();
     private static final EarthquakesPrinterToConsole EARTHQUAKES_PRINTER_TO_CONSOLE = new EarthquakesPrinterToConsole();
-    private static final UserInputCoordinatesRangeValidator USER_INPUT_TO_COORDINATES = new UserInputCoordinatesRangeValidator();
+    private static final CoordinatesRangeValidator COORDINATES_RANGE_VALIDATOR = new CoordinatesRangeValidator();
 
     public static void main(String[] args) {
         run();
@@ -57,7 +57,7 @@ public final class Main {
             }
 
             EARTHQUAKES_PRINTER_TO_CONSOLE
-                    .printNearbyEarthquakes(nearestEarthquakesSortedByDistanceDistinct);
+                    .printEarthquakes(nearestEarthquakesSortedByDistanceDistinct);
 
             userInputToExitProgram = printRequestToUserHowToExitProgramAndReadInput();
         }
@@ -75,7 +75,7 @@ public final class Main {
             REQUEST_FOR_USER_INPUT_PRINTER.printRequestForLatitude();
             String latitudeInput = USER_INPUT_SCANNER.readNext();
             try {
-                validatedValue = USER_INPUT_TO_COORDINATES
+                validatedValue = COORDINATES_RANGE_VALIDATOR
                         .validateValueWithLatitudeRangeAndConvertToDouble(latitudeInput);
                 userProvidedCorrectInput = true;
             } catch (IncorrectCoordinateValueRangeException | IncorrectCoordinateValueException e) {
@@ -92,7 +92,7 @@ public final class Main {
             REQUEST_FOR_USER_INPUT_PRINTER.printRequestForLongitude();
             String longitudeInput = USER_INPUT_SCANNER.readNext();
             try {
-                validatedValue = USER_INPUT_TO_COORDINATES
+                validatedValue = COORDINATES_RANGE_VALIDATOR
                         .validateValueWithLongitudeRangeAndConvertToDouble(longitudeInput);
                 userProvidedCorrectInput = true;
             } catch (IncorrectCoordinateValueRangeException | IncorrectCoordinateValueException e) {
