@@ -13,7 +13,7 @@ public class UserInputFromConsoleScanner implements UserInputScanner {
     }
 
     @Override
-    public String readUserInput() {
+    public String readNext() {
         return scanner.nextLine();
     }
 }
