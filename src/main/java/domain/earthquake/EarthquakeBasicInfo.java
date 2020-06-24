@@ -1,5 +1,6 @@
-package domain.model;
+package domain.earthquake;
 
+import domain.coordinates.Coordinates;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

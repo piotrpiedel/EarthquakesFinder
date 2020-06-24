@@ -1,9 +1,9 @@
 package application.service;
 
 import application.distancecalc.DistanceCalculator;
-import domain.model.Coordinates;
-import domain.model.EarthquakeBasicInfo;
-import domain.model.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
+import domain.coordinates.Coordinates;
+import domain.earthquake.EarthquakeBasicInfo;
+import domain.earthquake.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
 import infrastructure.client.EarthquakesApiClient;
 import infrastructure.exception.IncorrectEndpointException;
 import infrastructure.transformer.FeatureToEarthquakeBasicInfoTransformer;

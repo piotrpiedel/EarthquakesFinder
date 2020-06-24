@@ -1,9 +1,9 @@
 import application.distancecalc.HaversineDistanceCalculator;
 import application.service.EarthquakesService;
-import domain.model.Coordinates;
-import domain.model.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
-import domain.model.Latitude;
-import domain.model.Longitude;
+import domain.coordinates.Coordinates;
+import domain.coordinates.Latitude;
+import domain.coordinates.Longitude;
+import domain.earthquake.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
 import infrastructure.client.EarthquakesApiClient;
 import infrastructure.exception.IncorrectCoordinateValueException;
 import infrastructure.exception.IncorrectCoordinateValueRangeException;

@@ -12,7 +12,7 @@ public class CoordinatesRangeValidatorTest {
     CoordinatesRangeValidator coordinatesRangeValidator;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         coordinatesRangeValidator = new CoordinatesRangeValidator();
     }
 
