@@ -1,4 +1,4 @@
-package domain.model;
+package domain.coordinates;
 
 /**
  * @author Piotr

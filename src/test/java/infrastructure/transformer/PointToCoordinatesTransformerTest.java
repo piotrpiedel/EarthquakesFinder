@@ -1,6 +1,6 @@
 package infrastructure.transformer;
 
-import domain.model.Coordinates;
+import domain.coordinates.Coordinates;
 import org.geojson.Point;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,7 @@ public class PointToCoordinatesTransformerTest {
     PointToCoordinatesTransformer pointToCoordinatesTransformer;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         pointToCoordinatesTransformer = new PointToCoordinatesTransformer();
     }
 

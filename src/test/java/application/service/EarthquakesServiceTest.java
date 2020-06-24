@@ -3,7 +3,7 @@ package application.service;
 import application.distancecalc.HaversineDistanceCalculator;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import domain.model.EarthquakeBasicInfo;
+import domain.earthquake.EarthquakeBasicInfo;
 import infrastructure.client.EarthquakesApiClient;
 import infrastructure.transformer.FeatureToEarthquakeBasicInfoTransformer;
 import org.geojson.Feature;

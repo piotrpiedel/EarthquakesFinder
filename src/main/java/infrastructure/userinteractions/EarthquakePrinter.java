@@ -1,6 +1,6 @@
 package infrastructure.userinteractions;
 
-import domain.model.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
+import domain.earthquake.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
 
 import java.util.List;
 

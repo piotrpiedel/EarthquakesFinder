@@ -1,4 +1,4 @@
-package domain.model;
+package domain.coordinates;
 
 import lombok.Getter;
 import lombok.ToString;

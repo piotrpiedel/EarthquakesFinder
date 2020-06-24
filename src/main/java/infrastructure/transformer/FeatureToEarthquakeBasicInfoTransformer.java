@@ -1,6 +1,6 @@
 package infrastructure.transformer;
 
-import domain.model.EarthquakeBasicInfo;
+import domain.earthquake.EarthquakeBasicInfo;
 import org.geojson.Feature;
 import org.geojson.Point;
 

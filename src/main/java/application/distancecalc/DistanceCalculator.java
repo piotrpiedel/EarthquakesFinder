@@ -1,6 +1,6 @@
 package application.distancecalc;
 
-import domain.model.Coordinates;
+import domain.coordinates.Coordinates;
 
 public interface DistanceCalculator {
 

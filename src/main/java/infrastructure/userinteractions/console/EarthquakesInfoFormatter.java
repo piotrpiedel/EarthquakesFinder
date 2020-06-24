@@ -1,6 +1,6 @@
 package infrastructure.userinteractions.console;
 
-import domain.model.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
+import domain.earthquake.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
 import lombok.experimental.UtilityClass;
 
 import java.util.List;

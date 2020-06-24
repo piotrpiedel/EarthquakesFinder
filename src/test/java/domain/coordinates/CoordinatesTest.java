@@ -1,8 +1,5 @@
-package domain;
+package domain.coordinates;
 
-import domain.model.Coordinates;
-import domain.model.Latitude;
-import domain.model.Longitude;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

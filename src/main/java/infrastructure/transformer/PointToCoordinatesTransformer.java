@@ -1,8 +1,8 @@
 package infrastructure.transformer;
 
-import domain.model.Coordinates;
-import domain.model.Latitude;
-import domain.model.Longitude;
+import domain.coordinates.Coordinates;
+import domain.coordinates.Latitude;
+import domain.coordinates.Longitude;
 import org.geojson.Point;
 
 public class PointToCoordinatesTransformer {

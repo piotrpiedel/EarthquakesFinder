@@ -1,4 +1,4 @@
-package domain.model;
+package domain.earthquake;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

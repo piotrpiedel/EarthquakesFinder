@@ -1,6 +1,6 @@
 package infrastructure.userinteractions.console;
 
-import domain.model.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
+import domain.earthquake.EarthquakeBasicInfoWithDistanceToIndicatedPoint;
 import infrastructure.userinteractions.EarthquakePrinter;
 
 import java.util.List;

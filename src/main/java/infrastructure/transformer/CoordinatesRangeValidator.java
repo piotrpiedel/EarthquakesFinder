@@ -1,6 +1,6 @@
 package infrastructure.transformer;
 
-import domain.model.CoordinatesRanges;
+import domain.coordinates.CoordinatesRanges;
 import infrastructure.exception.IncorrectCoordinateValueException;
 import infrastructure.exception.IncorrectCoordinateValueRangeException;
 

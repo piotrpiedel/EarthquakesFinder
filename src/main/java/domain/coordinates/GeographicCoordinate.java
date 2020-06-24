@@ -1,4 +1,4 @@
-package domain.model;
+package domain.coordinates;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -9,9 +9,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 @AllArgsConstructor
-public class Coordinates {
+public abstract class GeographicCoordinate {
 
-    private final Longitude longitude;
-    private final Latitude latitude;
-
+    private final double value;
 }
