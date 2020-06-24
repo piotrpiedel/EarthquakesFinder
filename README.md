@@ -3,7 +3,7 @@
 Program shows the nearest earthquakes from past month for given coordinates.
 Earthquakes are sort by distance to given point and filtered from duplicates by place.
 
-Application uses API to fetch earthquakes:
+Application use API to fetch earthquakes:
 https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
 
 # App requirements
